@@ -48,10 +48,13 @@ class friController extends Controller
      */
     public function show(fri $fri)
     {
-            $fri->airline;
-            $fri->arrival;
-            $fri->depature;
+            // $fri->airline;
+            // $fri->arrival;
+            // $fri->depature;
             // $fri->load('airline');
+        $fri['maskapai'] = $fri->airline->LONG_NAME;
+        $fri['keberangkatan'] = $fri->depature->LONG_NAME;
+        $fri['kedatangan'] = $fri->arrival->LONG_NAME;
         return  $fri;
     }
 
