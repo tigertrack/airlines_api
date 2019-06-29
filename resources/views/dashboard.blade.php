@@ -22,7 +22,7 @@
                 <tbody>
                     @foreach($fri as $item)
                     <tr>
-                    <td><a href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{$item->UniqueID}}}}">{{$item->UniqueID}}</a></td>
+                    <td><a href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{$item->UniqueID}}">{{$item->UniqueID}}</a></td>
                     <td>{{$item->AIRLINE_COPD.$item->FLIGHT_NUM}}</td>
                     <td>{{$item->DLINE_CITY1}}</td>
                     <td>{{$item->EffectiveDate}}</td>
