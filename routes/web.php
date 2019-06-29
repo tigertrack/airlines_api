@@ -52,7 +52,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::post('/auth', function(request $request){
-    $id = App\user::where('email', $request->email)
+    $id = App\User::where('email', $request->email)
         ->where('password', md5($request->password))
         ->first();
     
