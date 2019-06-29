@@ -45,7 +45,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="index.php?act=logout">
+        <a class="nav-link" href="/logout">
           <i class="fas fa-fw fa-power-off"></i>
           <span>Logout</span>
         </a>

@@ -16,8 +16,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'email', 'password',
     ];
+
+    protected $table = "tbl_admin";
+
+    protected $primaryKey = "id_admin";
 
     /**
      * The attributes that should be hidden for arrays.
@@ -36,4 +40,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public $timestamps = false;
+
+    public function setAttribute($key, $value)
+    {
+      $isRememberTokenAttribute = $key == $this->getRememberTokenName();
+      if (!$isRememberTokenAttribute)
+      {
+        parent::setAttribute($key, $value);
+      }
+    }
 }
