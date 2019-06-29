@@ -14,7 +14,7 @@ class fri extends Model
 
     public $timestamps = false;
 
-    protected $visible = ['ACTUAL_CLAIM', 'UniqueID', 'TERMINAL', 'UPLINE_CITY1', 'DNLINE_CITY1', 'STD_TIME_STAMP', 'DGATE', 'STA_TIME_STAMP', 'AGATE', 'INT_OR_DOM', 'AIRLINE_CODE', 'FLIGHT_NUM', 'airline', 'depature', 'arrival', 'maskapai', 'keberangkatan', 'kedatangan'];
+    protected $visible = ['RECLAIM_FIRST_BAG_TIME', 'ACTUAL_CLAIM', 'UniqueID', 'TERMINAL', 'UPLINE_CITY1', 'DNLINE_CITY1', 'STD_TIME_STAMP', 'DGATE', 'STA_TIME_STAMP', 'AGATE', 'INT_OR_DOM', 'AIRLINE_CODE', 'FLIGHT_NUM', 'airline', 'depature', 'arrival', 'maskapai', 'keberangkatan', 'kedatangan'];
     
     public function airline(){
         return $this->hasOne('App\airlines', 'CODE', 'AIRLINE_CODE');
