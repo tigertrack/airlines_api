@@ -10,7 +10,11 @@ class airlines extends Model
 
     protected $primaryKey = "CODE";
 
-    protected $visible = ['SHORT_NAME', 'LONG_NAME'];
+    protected $casts = [
+        'CODE' => 'string'
+      ];
+
+    protected $visible = ['CODE', 'SHORT_NAME', 'LONG_NAME'];
 
     public function fri(){
         return $this->belongsTo('App\fri', 'AIRLINE_CODE', "CODE");
