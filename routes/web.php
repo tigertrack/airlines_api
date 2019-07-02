@@ -35,7 +35,25 @@ Route::middleware(['auth'])->group(function () {
         return redirect()->route('dashboard');
     });
 
+    Route::get('/create', function(){
+        $airlines = App\airlines::all();
+        $station = App\station::all();
+        $max = App\fri::orderBy('UniqueID', 'desc')->first();
+        return view('create', compact(['airlines', 'station', 'max']));
+    });
 
+    Route::post('/create', function(request $request){
+        DB::table('fri')->insert([
+            'UniqueID' => $request->UniqueID,
+            'AIRLINE_CODE' => $request->airline,
+            'FLIGHT_NUM' => $request->flight,
+            'UPLINE_CITY1' => $request->from,
+            'DNLINE_CITY1' => $request->to,
+            'ACTUAL_CLAIM' => $request->claim,
+            'RECLAIM_FIRST_BAG_TIME' => $request->landing
+        ]);
+        return redirect()->route('dashboard');
+    });
 
     Route::get('/reclaim/{id}', function ($id) {
         App\fri::where('UniqueID', $id)
