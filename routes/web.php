@@ -26,6 +26,12 @@ Route::middleware(['auth'])->group(function () {
         return view('edit', compact(['fri', 'airlines']));
     });
 
+    Route::get('/fri/{id}/delete', function ($id){
+        $fri = App\fri::find($id);
+        $fri->delete();
+        return redirect()->route('dashboard');
+    });
+
     Route::post('/update', function(request $request){
         App\fri::where('uniqueID', $request->id)
             ->update([

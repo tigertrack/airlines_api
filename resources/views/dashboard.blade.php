@@ -29,7 +29,7 @@
                     <td>{{preg_replace('/\D/', '', $item->ACTUAL_CLAIM)}}</td>
                     <td>
                     <a href="/edit/{{$item->UniqueID }}">EDIT</a> 
-                    | DELETE 
+                    | <a href="/fri/{{$item->UniqueID }}/delete">DELETE</a> 
                      @if($item->RECLAIM_FIRST_BAG_TIME == '0000-00-00 00:00:00')
                     |   <a href="/reclaim/{{$item->UniqueID }}">RECLAIM</a>
                     @endif
