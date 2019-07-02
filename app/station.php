@@ -11,4 +11,8 @@ class station extends Model
     protected $primaryKey = 'CODE';
 
     protected $visible = ['SHORT_NAME', 'LONG_NAME'];
+
+    protected $casts = [
+        'CODE' => 'string'
+      ];
 }
